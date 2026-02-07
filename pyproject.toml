@@ -1,7 +1,7 @@
 [project]
 name = "co-living-app"
 version = "0.1.0"
-description = "App for managig home budget, events, tasks and more"
+description = "App for managing home budget, events, tasks and more"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
