@@ -4,7 +4,8 @@ from typing import Any
 
 from app.schemas.user import UserCreate, UserRead
 from app.services import user as user_service
-from app.api.db_helper import get_db
+from app.api.db_helper import get_db, get_current_user
+from app.models.user import User
 router = APIRouter()
 
 
@@ -22,3 +23,9 @@ async def register_user(
 
     user = await user_service.create_user(db, user=user_in)
     return user
+
+@router.get("/me", response_model=UserRead)
+async def read_user_me(
+    current_user: User = Depends(get_current_user),
+) -> Any:
+    return current_user
