@@ -13,5 +13,6 @@ uv.lock
 .idea/
 
 
-# Virtual environments
+# Virtual environments and other env files
 .venv
+.env
