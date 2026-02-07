@@ -5,6 +5,7 @@ description = "App for managing home budget, events, tasks and more"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.18.3",
     "asyncpg>=0.31.0",
     "fastapi[standard]>=0.128.3",
     "greenlet>=3.3.1",
