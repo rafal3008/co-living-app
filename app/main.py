@@ -1,13 +1,10 @@
 from fastapi import FastAPI, Response, status
+from contextlib import asynccontextmanager
+from sqlalchemy import text
+
 from app.api.v1.api import api_router
 from app.core.config import settings
-from sqlalchemy import text
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from contextlib import asynccontextmanager
-
-
-
-engine = create_async_engine(settings.DATABASE_URL)
+from app.db.session import engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
