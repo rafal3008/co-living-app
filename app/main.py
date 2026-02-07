@@ -5,6 +5,7 @@ from sqlalchemy import text
 from app.api.v1.api import api_router
 from app.core.config import settings
 from app.db.session import engine
+from app import models
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
