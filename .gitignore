@@ -16,3 +16,6 @@ uv.lock
 # Virtual environments and other env files
 .venv
 .env
+
+#alembic data
+alembic/versions
