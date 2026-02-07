@@ -11,6 +11,8 @@ async def get_user_by_email(db: AsyncSession, email: str) -> User | None:
 
 
 async def create_user(db: AsyncSession, user: UserCreate) -> User:
+    #print(f"DEBUG: Hashing this value: {user.password}")
+    #print(f"DEBUG: Type of value: {type(user.password)}")
     hashed_password = get_password_hash(user.password)
 
     db_user = User(
