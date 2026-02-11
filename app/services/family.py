@@ -13,9 +13,6 @@ async def create_family(db: AsyncSession, family: FamilyCreate, current_user: Us
 
     return db_family
 
-
-
-
 async def get_family_by_id(db: AsyncSession, family_id: int) -> Family | None:
     result = await db.execute(select(Family).where(Family.id == family_id))
     return result.scalar_one_or_none()
